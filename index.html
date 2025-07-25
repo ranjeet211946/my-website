@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Travel Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="iit.png" alt="IIT Jodhpur" class="bg">
+    <div class="container">
+        <h1>Welcome to IIT Jodhpur US Trip Form</h1>
+
+        <!-- ✅ Show only after successful submission -->
+        <?php if ($insert): ?>
+            <p class="submitmsg" style="color: green; font-weight: bold;">
+                ✅ Thanks for submitting your form. We are happy to see you joining us for the US trip.
+            </p>
+        <?php endif; ?>
+
+        <p>Enter your details to confirm your participation in the trip</p>
+
+        <form action="index.php" method="post">
+            <input type="text" name="name" placeholder="Enter your name" required pattern="[A-Za-z][A-Za-z ]+">
+            <input type="text" name="fname" placeholder="Enter father name" required pattern="[A-Za-z][A-Za-z ]+">
+            <input type="text" name="mname" placeholder="Enter mother name" required pattern="[A-Za-z][A-Za-z ]+">
+            <input type="text" name="age" placeholder="Enter your Age" required pattern="[0-9]{1,2}">
+            <input type="text" name="gender" placeholder="Enter your gender" required pattern="male|female|other">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="tel" name="phone" placeholder="Enter your phone number" required pattern="[0-9]{10}">
+            <textarea name="desc" rows="5" cols="5" placeholder="Enter any other information here" required></textarea>
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
